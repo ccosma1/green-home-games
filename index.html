@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#3A2A6A" />
+  <meta name="description" content="Fan games by a holder. Survive. Defend. Endure. Then end the winter. Unofficial fan games — not the project team." />
+  <title>Green Home Games · Fan games by a holder</title>
+  <link rel="icon" href="assets/icons/green-home-games.ico" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Green Home Games" />
+  <meta property="og:description" content="Fan games by a holder. Survive. Defend. Endure. Then end the winter." />
+  <meta property="og:url" content="https://ccosma1.github.io/green-home-games/" />
+  <meta property="og:image" content="https://ccosma1.github.io/green-home-games/assets/og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Green Home Games" />
+  <meta name="twitter:description" content="Fan games by a holder. Survive. Defend. Endure. Then end the winter." />
+  <meta name="twitter:image" content="https://ccosma1.github.io/green-home-games/assets/og.jpg" />
+  <style>
+    :root {
+      --sky: #3A2A6A; --ink: #1A1028; --cream: #F4E6C3; --yellow: #F5C400;
+      --moss: #3D6B38; --ice: #A8C4E8; --fur: #8B5A2B; --ember: #E86A2A;
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html, body {
+      margin: 0; min-height: 100%; background: var(--ink); color: var(--cream);
+      font-family: "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+    }
+    body {
+      padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    }
+    #page {
+      width: 100%; max-width: 430px; margin: 0 auto; min-height: 100dvh;
+      background: var(--sky); display: flex; flex-direction: column;
+    }
+    .hero {
+      position: relative; min-height: 42vh; min-height: 42dvh;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 18px 16px 20px;
+    }
+    .hero img {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;
+    }
+    .hero::after {
+      content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background: linear-gradient(to top, #1a1028f2 0%, #1a102888 42%, #3A2A6A22 100%);
+    }
+    .hero .copy { position: relative; z-index: 2; }
+    h1 {
+      margin: 0 0 6px; font-size: clamp(28px, 9vw, 38px); line-height: 0.92; letter-spacing: 0.02em;
+      color: var(--yellow); text-shadow: 0 3px 0 #1A1028, 0 6px 16px #000;
+    }
+    .sub {
+      margin: 0 0 8px; font-size: 16px; font-weight: 800; color: var(--cream);
+      text-shadow: 0 2px 6px #000;
+    }
+    .line {
+      margin: 0 0 8px; font-size: 15px; font-weight: 800; line-height: 1.3; color: var(--cream);
+      text-shadow: 0 2px 6px #000;
+    }
+    .soft {
+      margin: 0; font-size: 13px; font-weight: 700; color: var(--ice);
+      text-shadow: 0 1px 4px #000;
+    }
+    .shelf {
+      flex: 1 1 auto; padding: 10px 12px 8px; display: flex; flex-direction: column; gap: 12px;
+    }
+    .shelf h2 {
+      margin: 2px 4px 2px; font-size: 13px; font-weight: 900; letter-spacing: 0.12em;
+      color: var(--yellow); text-transform: uppercase;
+    }
+    a.card {
+      display: grid; grid-template-columns: 96px minmax(0, 1fr);
+      text-decoration: none; color: inherit;
+      background: #2a1c4e; border: 3px solid var(--yellow); border-radius: 16px;
+      overflow: hidden; min-height: 112px;
+      box-shadow: 0 4px 0 #8a6a00;
+    }
+    a.card:active { transform: translateY(2px); box-shadow: 0 2px 0 #8a6a00; }
+    a.card img {
+      width: 96px; height: 100%; min-height: 112px; object-fit: cover; background: var(--ink);
+    }
+    .body { padding: 10px 12px 12px; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+    .body h3 {
+      margin: 0; font-size: 17px; font-weight: 900; color: var(--yellow); line-height: 1.15;
+      display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+    }
+    .kind { margin: 0; font-size: 12px; font-weight: 800; color: var(--ice); letter-spacing: 0.04em; }
+    .blurb { margin: 0; font-size: 15px; font-weight: 800; color: var(--cream); line-height: 1.25; }
+    .play {
+      margin-top: 6px; align-self: flex-start;
+      background: var(--yellow); color: var(--ink); border: 2px solid #1A1028;
+      font-weight: 900; font-size: 14px; letter-spacing: 0.08em;
+      padding: 6px 14px; border-radius: 12px;
+    }
+    .badge {
+      display: inline-block; background: var(--yellow); color: var(--ink);
+      font-size: 11px; font-weight: 900; letter-spacing: 0.08em;
+      padding: 2px 7px; border-radius: 999px; border: 2px solid #1A1028;
+    }
+    footer {
+      padding: 12px 16px max(16px, env(safe-area-inset-bottom));
+      text-align: center; font-size: 13px; font-weight: 800; line-height: 1.4;
+      color: var(--cream); background: #1A1028;
+    }
+  </style>
+</head>
+<body>
+  <div id="page">
+    <header class="hero">
+      <img src="assets/hero.jpg" alt="" />
+      <div class="copy">
+        <h1>GREEN HOME GAMES</h1>
+        <p class="sub">Fan games by a holder.</p>
+        <p class="line">Survive. Defend. Endure. Then end the winter.</p>
+        <p class="soft">Unofficial fan games. Not the project team.</p>
+      </div>
+    </header>
+    <main class="shelf">
+      <h2>Chapters</h2>
+      <a class="card" href="https://ccosma1.github.io/bober-yeet/">
+        <img src="assets/cards/yeet.jpg" alt="" />
+        <div class="body">
+          <h3>Bober Yeet</h3>
+          <p class="kind">Myth / aim</p>
+          <p class="blurb">First he yeeted.</p>
+          <span class="play">Play</span>
+        </div>
+      </a>
+      <a class="card" href="https://ccosma1.github.io/bober-dam-defense/">
+        <img src="assets/cards/dam.jpg" alt="" />
+        <div class="body">
+          <h3>Bober Dam Defense</h3>
+          <p class="kind">War / place-defend</p>
+          <p class="blurb">Then he held the dam.</p>
+          <span class="play">Play</span>
+        </div>
+      </a>
+      <a class="card" href="https://ccosma1.github.io/bober-frost-lodge/">
+        <img src="assets/cards/lodge.jpg" alt="" />
+        <div class="body">
+          <h3>Bober Frost Lodge</h3>
+          <p class="kind">Winter / build-endure</p>
+          <p class="blurb">Then he held the fire.</p>
+          <span class="play">Play</span>
+        </div>
+      </a>
+      <a class="card" href="https://ccosma1.github.io/bober-nightfall/">
+        <img src="assets/cards/nightfall.jpg" alt="" />
+        <div class="body">
+          <h3>Bober Nightfall <span class="badge">NEW</span></h3>
+          <p class="kind">Prestige / sword</p>
+          <p class="blurb">Bring the summer.</p>
+          <span class="play">Play</span>
+        </div>
+      </a>
+    </main>
+    <footer>Fan games by a holder. · No wallet.</footer>
+  </div>
+</body>
+</html>
