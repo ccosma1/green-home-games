@@ -2,7 +2,7 @@
 
 Fan games by a holder. Not the project team. Unofficial fan games.
 
-Survive. Defend. Endure. Then end the winter.
+Survive. Defend. Endure. End winter. Keep summer.
 
 A phone-first shelf for five browser chapters: Yeet, Dam Defense, Frost Lodge, Nightfall, Green Home Crown.
 
